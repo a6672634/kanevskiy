@@ -16,7 +16,7 @@ public class Shop_by {
         System.setProperty("webdriver.chrome.driver",
                 "src/main/resources/chromedriver123.exe");
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--kiosk");
+        options.addArguments("--kiosk");
         driver = new ChromeDriver(options);
     }
 
@@ -136,7 +136,7 @@ public class Shop_by {
         screen14.sendKeys("700");
         Assert.assertTrue(screen14.isDisplayed(), "screen14 is not displayed");
         try {
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -146,7 +146,7 @@ public class Shop_by {
         Assert.assertTrue(button.isDisplayed(), "button is not displayed");
 
         try {
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -173,16 +173,16 @@ public class Shop_by {
         Assert.assertTrue(price.isDisplayed(), "price is not displayed");
 
         try {
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
 
-        WebElement pricemin =
-                driver.findElement(By.xpath("//div[@id='Attr_prof_5828']/div/div[2]/span"));
-        pricemin.click();
-        Assert.assertTrue(pricemin.isDisplayed(), "price is not displayed");
+        WebElement size =
+                driver.findElement(By.xpath("//*[@id=\"Attr_prof_5828\"]/div/div[2]/span[1]"));
+        size.click();
+        Assert.assertTrue(size.isDisplayed(), "size is not displayed");
 
         try {
             Thread.sleep(3000);
@@ -190,10 +190,76 @@ public class Shop_by {
             e.printStackTrace();
         }
 
-        WebElement pricemax =
-                driver.findElement(By.xpath("//div[@id='ContAttr_prof_5828']/div[22]/a/label"));
-        pricemax.click();
-        Assert.assertTrue(pricemin.isDisplayed(), "price is not displayed");
+        WebElement size1 =
+                driver.findElement(By.xpath("//*[@id=\"ContAttr_prof_5828\"]/div[24]/a/label"));
+        size.click();
+        Assert.assertTrue(size1.isDisplayed(), "size 12 is not displayed");
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        WebElement size2 =
+                driver.findElement(By.xpath("//*[@id=\"ContAttr_prof_5828\"]/div[18]/a/label"));
+        size.click();
+        Assert.assertTrue(size2.isDisplayed(), "size 12 is not displayed");
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        WebElement show =
+                driver.findElement(By.xpath("//*[@id=\"ModelFilter__NumModelWindow\"]/div[1]"));
+        size.click();
+        Assert.assertTrue(show.isDisplayed(), "show is not displayed");
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        WebElement quantity =
+                driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div[5]/div[2]/div[3]/div/div/div[1]/text()"));
+
+        Assert.assertTrue(quantity.isDisplayed(), "quantity is not displayed");
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        WebElement sorting =
+                driver.findElement(By.cssSelector("#selABU_chzn > span.chzn-single.chzn-single-with-drop > span"));
+        size.click();
+        Assert.assertTrue(sorting.isDisplayed(), "sorting is not displayed");
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        WebElement sorting2 =
+                driver.findElement(By.xpath("//span[@id='selZYR_chzn']/span/b"));
+        size.click();
+        Assert.assertTrue(sorting2.isDisplayed(), "sorting2 is not displayed");
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        WebElement sorting3 =
+                driver.findElement(By.xpath("driver.findElement(By.xpath(\"//span[2]/span/b\"))"));
+        size.click();
+        Assert.assertTrue(sorting3.isDisplayed(), "sorting3 is not displayed");
 
         try {
             Thread.sleep(3000);
