@@ -34,7 +34,7 @@ public class Shop_by {
     @Test
     public void Chek() {
         try {
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -52,7 +52,7 @@ public class Shop_by {
             buttonNote.click();
             Assert.assertTrue(buttonNote.isDisplayed(), "computer button is not displayed");
             try {
-                Thread.sleep(10000);
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -90,7 +90,7 @@ public class Shop_by {
         Assert.assertTrue(box2.isDisplayed(), "box HP button is not displayed");
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -100,14 +100,14 @@ public class Shop_by {
         Assert.assertTrue(price.isDisplayed(), "price2 is not displayed");
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         WebElement price2 =
                 driver.findElement(By.xpath("//div[@id='Attr_prof_1000']/div/div/div/div[4]/a/label"));
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -118,7 +118,7 @@ public class Shop_by {
         Assert.assertTrue(screen.isDisplayed(), "screen is not displayed");
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -127,7 +127,7 @@ public class Shop_by {
         screen12.clear();
         Assert.assertTrue(screen12.isDisplayed(), "screen2 is not displayed");
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -136,7 +136,7 @@ public class Shop_by {
         screen14.sendKeys("700");
         Assert.assertTrue(screen14.isDisplayed(), "screen14 is not displayed");
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -146,7 +146,7 @@ public class Shop_by {
         Assert.assertTrue(button.isDisplayed(), "button is not displayed");
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -163,7 +163,7 @@ public class Shop_by {
         Assert.assertTrue(amount_of_elements.isDisplayed(), "pick is not displayed");
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -171,7 +171,7 @@ public class Shop_by {
                 driver.findElement(By.name("price_after"));
         price10.sendKeys("1500");
         Assert.assertTrue(price10.isDisplayed(), "price is not displayed");
-
+// при вводе цены наблюдается баг, невозможно некоторое время ввести значения
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -181,7 +181,7 @@ public class Shop_by {
         WebElement size =
                 driver.findElement(By.xpath("//*[@id=\"Attr_prof_5828\"]/div/div[2]/span[1]"));
         size.click();
-       
+
 
         try {
             Thread.sleep(3000);
@@ -191,7 +191,7 @@ public class Shop_by {
 
         WebElement size1 =
                 driver.findElement(By.xpath("//*[@id=\"ContAttr_prof_5828\"]/div[24]/a/label"));
-        size.click();
+        size1.click();
         Assert.assertTrue(size1.isDisplayed(), "size 12 is not displayed");
 
         try {
@@ -202,7 +202,7 @@ public class Shop_by {
 
         WebElement size2 =
                 driver.findElement(By.xpath("//*[@id=\"ContAttr_prof_5828\"]/div[18]/a/label"));
-        size.click();
+        size2.click();
         Assert.assertTrue(size2.isDisplayed(), "size 12 is not displayed");
 
         try {
@@ -213,7 +213,7 @@ public class Shop_by {
 
         WebElement show =
                 driver.findElement(By.xpath("//*[@id=\"ModelFilter__NumModelWindow\"]/div[1]"));
-        size.click();
+        show.click();
         Assert.assertTrue(show.isDisplayed(), "show is not displayed");
 
         try {
@@ -235,7 +235,7 @@ public class Shop_by {
 
         WebElement sorting =
                 driver.findElement(By.cssSelector("#selABU_chzn > span.chzn-single.chzn-single-with-drop > span"));
-        size.click();
+        sorting.click();
         Assert.assertTrue(sorting.isDisplayed(), "sorting is not displayed");
 
         try {
@@ -246,7 +246,7 @@ public class Shop_by {
 
         WebElement sorting2 =
                 driver.findElement(By.xpath("//span[@id='selZYR_chzn']/span/b"));
-        size.click();
+        sorting2.click();
         Assert.assertTrue(sorting2.isDisplayed(), "sorting2 is not displayed");
 
         try {
@@ -256,8 +256,8 @@ public class Shop_by {
         }
 
         WebElement sorting3 =
-                driver.findElement(By.xpath("driver.findElement(By.xpath(\"//span[2]/span/b\"))"));
-        size.click();
+                driver.findElement(By.xpath("//span[2]/span/b\"))"));
+        sorting3.click();
         Assert.assertTrue(sorting3.isDisplayed(), "sorting3 is not displayed");
 
         try {
