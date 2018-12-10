@@ -59,7 +59,7 @@ public class Shop_by {
         }
 
     @Test
-        public void Chek3(){
+        public void Chek3() {
         driver.get("https://shop.by/noutbuki/");
 
         WebElement box =
@@ -97,9 +97,9 @@ public class Shop_by {
 
         WebElement price =
                 driver.findElement(By.xpath("//div[@id='Attr_prof_1000']/div/div/div/div[5]/a/label"));
-                Assert.assertTrue(price.isDisplayed(), "price2 is not displayed");
+        Assert.assertTrue(price.isDisplayed(), "price2 is not displayed");
 
-                try {
+        try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -151,18 +151,18 @@ public class Shop_by {
             e.printStackTrace();
         }
 
-            WebElement amount_of_elements =
-                    driver.findElement(By.name("price_after"));
+        WebElement amount_of_elements =
+                driver.findElement(By.name("price_after"));
         amount_of_elements.clear();
 
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            Assert.assertTrue(amount_of_elements.isDisplayed(), "pick is not displayed");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Assert.assertTrue(amount_of_elements.isDisplayed(), "pick is not displayed");
 
-            try {
+        try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -170,19 +170,18 @@ public class Shop_by {
         WebElement price10 =
                 driver.findElement(By.name("price_after"));
         price10.sendKeys("1500");
-        Assert.assertTrue(price.isDisplayed(), "price is not displayed");
+        Assert.assertTrue(price10.isDisplayed(), "price is not displayed");
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-
         WebElement size =
                 driver.findElement(By.xpath("//*[@id=\"Attr_prof_5828\"]/div/div[2]/span[1]"));
         size.click();
-        Assert.assertTrue(size.isDisplayed(), "size is not displayed");
+       
 
         try {
             Thread.sleep(3000);
@@ -266,6 +265,7 @@ public class Shop_by {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
 
 
         // больше не могу. все плывет и не работает. Меня наверное плохо научили все таки. Извиняюсь.
