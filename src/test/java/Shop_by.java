@@ -1,9 +1,12 @@
+import org.junit.After;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
+
+import static org.testng.Assert.fail;
 
 public class Shop_by {
     WebDriver driver;
@@ -223,20 +226,28 @@ public class Shop_by {
         @Test
                 public void Chek4 () {
         driver.get("https://shop.by/noutbuki/?data_mode=1&mode=find&essense_id=846&sort=price--number&price_before=700&price_after=1500&prof_1000=8991&prof_1000=1612&prof_1000=2023&prof_5828=12111&prof_5828=12346");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        WebElement quality =
+                driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div[5]/div[2]/div[3]/div/div/div[1]"));
+        Assert.assertTrue(quality.isDisplayed(),("quality is not displayed"));
 
         WebElement sort =
-                driver.findElement(By.xpath("//*[@id=\"selM0O_chzn\"]/span[1]/span"));
+                driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div[5]/div[2]/div[3]/div/div/div[2]/div[2]"));
         sort.click();
-
+            Assert.assertTrue(sort.isDisplayed(),("sort is not displayed"));
 
         try {
-            Thread.sleep(3000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
+// От этого места все поехало
         WebElement sorting =
-                driver.findElement(By.cssSelector("#selABU_chzn > span.chzn-single.chzn-single-with-drop > span"));
+                driver.findElement(By.xpath("//*[@id=\"selFH1_chzn\"]/span[1]/span"));
         sorting.click();
         Assert.assertTrue(sorting.isDisplayed(), "sorting is not displayed");
 
@@ -247,7 +258,7 @@ public class Shop_by {
         }
 
         WebElement sorting2 =
-                driver.findElement(By.xpath("//span[@id='selZYR_chzn']/span/b"));
+                driver.findElement(By.xpath("//span[2]/span/b"));
         sorting2.click();
         Assert.assertTrue(sorting2.isDisplayed(), "sorting2 is not displayed");
 
@@ -258,7 +269,7 @@ public class Shop_by {
         }
 
         WebElement sorting3 =
-                driver.findElement(By.xpath("//span[2]/span/b\"))"));
+                driver.findElement(By.xpath("//li[@id='selZYR_chzn_o_2']"));
         sorting3.click();
         Assert.assertTrue(sorting3.isDisplayed(), "sorting3 is not displayed");
 
@@ -267,7 +278,45 @@ public class Shop_by {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+            public void tearDown() throws Exception {
+                driver.quit();
+                String verificationErrorString = verificationErrors.toString();
+                if (!"".equals(verificationErrorString)) {
+                    fail(verificationErrorString);
+                }
+            }
 
-        
+            private boolean isElementPresent(By by) {
+                try {
+                    driver.findElement(by);
+                    return true;
+                } catch (NoSuchElementException e) {
+                    return false;
+                }
+            }
+
+            private boolean isAlertPresent() {
+                try {
+                    driver.switchTo().alert();
+                    return true;
+                } catch (NoAlertPresentException e) {
+                    return false;
+                }
+            }
+
+            private String closeAlertAndGetItsText() {
+                try {
+                    Alert alert = driver.switchTo().alert();
+                    String alertText = alert.getText();
+                    if (acceptNextAlert) {
+                        alert.accept();
+                    } else {
+                        alert.dismiss();
+                    }
+                    return alertText;
+                } finally {
+                    acceptNextAlert = true;
+                }
+            }
     }
 }
