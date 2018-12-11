@@ -8,7 +8,7 @@ import org.testng.annotations.*;
 public class Shop_by {
     WebDriver driver;
 
-    // Подключаюсь к интернету через раздачу вайфая от телефона. Оператор связи лайф 4G
+
     @BeforeClass
     public void initWebdriver() {
         System.setProperty("webdriver.chrome.driver",
@@ -188,7 +188,7 @@ public class Shop_by {
         }
 
         WebElement size1 =
-                driver.findElement(By.xpath("//*[@id=\"ContAttr_prof_5828\"]/div[24]/a/label"));
+                driver.findElement(By.xpath("//*[@id=\"ContAttr_prof_5828\"]/div[25]/a/label"));
         size1.click();
         Assert.assertTrue(size1.isDisplayed(), "size 12 is not displayed");
 
@@ -199,9 +199,9 @@ public class Shop_by {
         }
 
         WebElement size2 =
-                driver.findElement(By.xpath("//*[@id=\"ContAttr_prof_5828\"]/div[18]/a/label"));
+                driver.findElement(By.xpath("//*[@id=\"ContAttr_prof_5828\"]/div[19]/a/label"));
         size2.click();
-        Assert.assertTrue(size2.isDisplayed(), "size 12 is not displayed");
+        Assert.assertTrue(size2.isDisplayed(), "size 13,4 is not displayed");
 
         try {
             Thread.sleep(3000);
@@ -219,11 +219,15 @@ public class Shop_by {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+        @Test
+                public void Chek4 () {
+        driver.get("https://shop.by/noutbuki/?data_mode=1&mode=find&essense_id=846&sort=price--number&price_before=700&price_after=1500&prof_1000=8991&prof_1000=1612&prof_1000=2023&prof_5828=12111&prof_5828=12346");
 
-        WebElement quantity =
-                driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div[5]/div[2]/div[3]/div/div/div[1]/text()"));
-
-        Assert.assertTrue(quantity.isDisplayed(), "quantity is not displayed");
+        WebElement sort =
+                driver.findElement(By.xpath("//*[@id=\"selM0O_chzn\"]/span[1]/span"));
+        sort.click();
+       
 
         try {
             Thread.sleep(3000);
@@ -264,7 +268,7 @@ public class Shop_by {
             e.printStackTrace();
         }
 
-      
+
         // больше не могу. все плывет и не работает. Меня наверное плохо научили все таки. Извиняюсь.
 
     }
