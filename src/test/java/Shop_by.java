@@ -227,7 +227,7 @@ public class Shop_by {
         WebElement sort =
                 driver.findElement(By.xpath("//*[@id=\"selM0O_chzn\"]/span[1]/span"));
         sort.click();
-       
+
 
         try {
             Thread.sleep(3000);
@@ -268,8 +268,6 @@ public class Shop_by {
             e.printStackTrace();
         }
 
-
-        // больше не могу. все плывет и не работает. Меня наверное плохо научили все таки. Извиняюсь.
-
+        
     }
 }
