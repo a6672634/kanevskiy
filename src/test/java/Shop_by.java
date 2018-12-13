@@ -245,7 +245,7 @@ public class Shop_by {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-// От этого места все поехало
+
         WebElement sorting =
                 driver.findElement(By.xpath("//*[@id=\"selFH1_chzn\"]/span[1]/span"));
         sorting.click();
@@ -258,7 +258,7 @@ public class Shop_by {
         }
 
         WebElement sorting2 =
-                driver.findElement(By.xpath("//span[2]/span/b"));
+                driver.findElement(By.xpath("//*[@id=\"selJY6_chzn\"]/span[1]/span"));
         sorting2.click();
         Assert.assertTrue(sorting2.isDisplayed(), "sorting2 is not displayed");
 
@@ -278,45 +278,9 @@ public class Shop_by {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-            public void tearDown() throws Exception {
-                driver.quit();
-                String verificationErrorString = verificationErrors.toString();
-                if (!"".equals(verificationErrorString)) {
-                    fail(verificationErrorString);
-                }
-            }
+            Assert.assertEquals(sorting, sorting3, "Check if item's name is the same");
 
-            private boolean isElementPresent(By by) {
-                try {
-                    driver.findElement(by);
-                    return true;
-                } catch (NoSuchElementException e) {
-                    return false;
-                }
-            }
-
-            private boolean isAlertPresent() {
-                try {
-                    driver.switchTo().alert();
-                    return true;
-                } catch (NoAlertPresentException e) {
-                    return false;
-                }
-            }
-
-            private String closeAlertAndGetItsText() {
-                try {
-                    Alert alert = driver.switchTo().alert();
-                    String alertText = alert.getText();
-                    if (acceptNextAlert) {
-                        alert.accept();
-                    } else {
-                        alert.dismiss();
-                    }
-                    return alertText;
-                } finally {
-                    acceptNextAlert = true;
-                }
-            }
+        driver.quit();
+        driver.close();
     }
 }
